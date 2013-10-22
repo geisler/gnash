@@ -51,7 +51,7 @@ bool
 AudioResamplerFfmpeg::init(AVCodecContext* ctx) {
     if ((ctx->sample_rate != 44100) ||
 #if defined(HAVE_SWRESAMPLE_H) || defined(HAVE_AVRESAMPLE_H)
-        (ctx->sample_fmt != AV_SAMPLE_FMT_S16)) ||
+        (ctx->sample_fmt != AV_SAMPLE_FMT_S16) ||
 #endif
         (ctx->channels != 2)) {
         if (! _context) {
